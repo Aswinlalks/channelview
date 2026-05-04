@@ -96,9 +96,12 @@ async function fetchAndRenderRealData() {
         const response = await fetch('data.json');
         if (response.ok) {
             const db = await response.json();
-            const latestEntry = db[db.length - 1];
-            lastDbTimestamp = new Date(latestEntry.timestamp);
             
+            // Sort to make sure the newest timestamp entry is processed
+            db.sort((a, b) => new Date(a.timestamp) - new Date(b.timestamp));
+            const latestEntry = db[db.length - 1];
+            
+            lastDbTimestamp = new Date(latestEntry.timestamp);
             const latestData = latestEntry.viewers;
 
             channels.forEach((channel, i) => {
@@ -154,6 +157,9 @@ async function loadHistoricalData() {
         const response = await fetch('data.json');
         if (!response.ok) throw new Error("No data found");
         const db = await response.json();
+
+        // Sort data chronologically
+        db.sort((a, b) => new Date(a.timestamp) - new Date(b.timestamp));
 
         let histLabels = db.map(entry => new Date(entry.timestamp).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'}));
         let histDatasets = channels.map((c, i) => ({
