@@ -5,16 +5,16 @@ on:
     - cron: '*/5 * * * *' # Runs every 5 minutes
   workflow_dispatch:
   push:
-    branches: [ master ] # <-- Added this line to force GitHub to recognize master 
+    branches: [ master ] # <-- Added this line to force GitHub to recognize master
 
 jobs:
   update-data:
     runs-on: ubuntu-latest
     permissions:
-      contents: write 
+      contents: write
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Setup Python
         uses: actions/setup-python@v4
