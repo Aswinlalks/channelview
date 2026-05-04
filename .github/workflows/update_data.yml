@@ -1,10 +1,11 @@
-
 name: Fetch YouTube Viewers (Raw Scraper)
 
 on:
   schedule:
     - cron: '*/5 * * * *' # Runs every 5 minutes
-  workflow_dispatch: 
+  workflow_dispatch:
+  push:
+    branches: [ master ] # <-- Added this line to force GitHub to recognize master 
 
 jobs:
   update-data:
