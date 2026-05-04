@@ -1,0 +1,66 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #121212;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+.dashboard-container {
+    width: 100%;
+    max-width: 1000px;
+    background-color: #1e1e1e;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+}
+
+h1 { font-size: 24px; margin-bottom: 8px; }
+p { color: #a0a0a0; margin-bottom: 24px; font-size: 14px; }
+
+/* Controls */
+.controls { display: flex; gap: 10px; margin-bottom: 20px; }
+button {
+    background-color: #2a2a2a; color: #ffffff; border: none;
+    padding: 10px 20px; border-radius: 6px; cursor: pointer;
+    font-weight: bold; transition: background 0.2s;
+}
+button:hover { background-color: #3a3a3a; }
+button.active { background-color: #007bff; }
+
+/* Scoreboard */
+.scoreboard { display: flex; flex-wrap: wrap; gap: 15px; margin-bottom: 25px; }
+.stat-card {
+    background-color: #2a2a2a; padding: 15px; border-radius: 8px; flex: 1;
+    min-width: 120px; text-align: center; border-top: 4px solid;
+    transition: transform 0.2s;
+}
+.stat-card h3 { font-size: 12px; color: #a0a0a0; margin-bottom: 5px; }
+.stat-card .number { font-size: 20px; font-weight: bold; color: #ffffff; font-family: monospace; }
+
+/* Animations */
+@keyframes flashGreen { 0% { color: #4ade80; } 100% { color: #ffffff; } }
+@keyframes flashRed { 0% { color: #f87171; } 100% { color: #ffffff; } }
+.up { animation: flashGreen 1s ease-out; }
+.down { animation: flashRed 1s ease-out; }
+
+/* Leaderboard */
+.leaderboard-container {
+    background-color: #2a2a2a; padding: 20px; border-radius: 8px; margin-bottom: 25px;
+}
+.leaderboard-container h2 { font-size: 18px; margin-bottom: 15px; color: #ffd700; }
+#leaderboard-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+#leaderboard-list li {
+    display: flex; justify-content: space-between; background-color: #1e1e1e;
+    padding: 12px 15px; border-radius: 6px; font-size: 16px; font-weight: bold;
+}
+
+/* Chart */
+.chart-container { position: relative; height: 500px; width: 100%; }

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kerala Election Live Viewership</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <div class="dashboard-container">
+        <h1>Kerala News Live Viewer Tracking</h1>
+        <p>Real-time viewership across major Malayalam news networks.</p>
+
+        <div id="live-scoreboard" class="scoreboard"></div>
+
+        <div class="leaderboard-container" id="leaderboard-section">
+            <h2>🏆 Live Leaderboard</h2>
+            <ul id="leaderboard-list"></ul>
+        </div>
+
+        <div class="controls">
+            <button class="active" id="btn-live" onclick="setMode('live')">Live Simulation</button>
+            <button id="btn-historical" onclick="setMode('historical')">Historical Data (From DB)</button>
+        </div>
+
+        <div class="chart-container">
+            <canvas id="viewerChart"></canvas>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
