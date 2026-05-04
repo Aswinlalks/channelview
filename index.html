@@ -11,7 +11,12 @@
 
     <div class="dashboard-container">
         <h1>Kerala News Live Viewer Tracking</h1>
-        <p>Real-time viewership across major Malayalam news networks.</p>
+        
+        <div id="last-updated" class="status-badge">
+            <span class="pulse-dot error"></span> Checking database...
+        </div>
+
+        <p>Real-time concurrent viewership across major Malayalam news networks.</p>
 
         <div id="live-scoreboard" class="scoreboard"></div>
 
@@ -21,8 +26,8 @@
         </div>
 
         <div class="controls">
-            <button class="active" id="btn-live" onclick="setMode('live')">Live Simulation</button>
-            <button id="btn-historical" onclick="setMode('historical')">Historical Data (From DB)</button>
+            <button class="active" id="btn-live" onclick="setMode('live')">Live Viewers</button>
+            <button id="btn-historical" onclick="setMode('historical')">Historical Data</button>
         </div>
 
         <div class="chart-container">

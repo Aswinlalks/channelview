@@ -19,33 +19,112 @@ body {
     background-color: #1e1e1e;
     padding: 30px;
     border-radius: 12px;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
 }
 
-h1 { font-size: 24px; margin-bottom: 8px; }
-p { color: #a0a0a0; margin-bottom: 24px; font-size: 14px; }
+h1 { 
+    font-size: 24px; 
+    margin-bottom: 8px; 
+}
+
+p { 
+    color: #a0a0a0; 
+    margin-bottom: 24px; 
+    font-size: 14px; 
+}
+
+/* Status Badge */
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: #a0a0a0;
+    background-color: #2a2a2a;
+    padding: 6px 14px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.pulse-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #4ade80;
+    border-radius: 50%;
+    box-shadow: 0 0 8px #4ade80;
+    animation: pulse 2s infinite;
+}
+
+.pulse-dot.error {
+    background-color: #f87171; 
+    box-shadow: 0 0 8px #f87171;
+}
+
+@keyframes pulse {
+    0% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(1.2); }
+    100% { opacity: 1; transform: scale(1); }
+}
 
 /* Controls */
-.controls { display: flex; gap: 10px; margin-bottom: 20px; }
-button {
-    background-color: #2a2a2a; color: #ffffff; border: none;
-    padding: 10px 20px; border-radius: 6px; cursor: pointer;
-    font-weight: bold; transition: background 0.2s;
+.controls { 
+    display: flex; 
+    gap: 10px; 
+    margin-bottom: 20px; 
 }
-button:hover { background-color: #3a3a3a; }
-button.active { background-color: #007bff; }
+
+button {
+    background-color: #2a2a2a; 
+    color: #ffffff; 
+    border: none;
+    padding: 10px 20px; 
+    border-radius: 6px; 
+    cursor: pointer;
+    font-weight: bold; 
+    transition: background 0.2s;
+}
+
+button:hover { 
+    background-color: #3a3a3a; 
+}
+
+button.active { 
+    background-color: #007bff; 
+}
 
 /* Scoreboard */
-.scoreboard { display: flex; flex-wrap: wrap; gap: 15px; margin-bottom: 25px; }
+.scoreboard { 
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 15px; 
+    margin-bottom: 25px; 
+}
+
 .stat-card {
-    background-color: #2a2a2a; padding: 15px; border-radius: 8px; flex: 1;
-    min-width: 120px; text-align: center; border-top: 4px solid;
+    background-color: #2a2a2a; 
+    padding: 15px; 
+    border-radius: 8px; 
+    flex: 1;
+    min-width: 120px; 
+    text-align: center; 
+    border-top: 4px solid;
     transition: transform 0.2s;
 }
-.stat-card h3 { font-size: 12px; color: #a0a0a0; margin-bottom: 5px; }
-.stat-card .number { font-size: 20px; font-weight: bold; color: #ffffff; font-family: monospace; }
 
-/* Animations */
+.stat-card h3 { 
+    font-size: 12px; 
+    color: #a0a0a0; 
+    margin-bottom: 5px; 
+}
+
+.stat-card .number { 
+    font-size: 20px; 
+    font-weight: bold; 
+    color: #ffffff; 
+    font-family: monospace; 
+}
+
 @keyframes flashGreen { 0% { color: #4ade80; } 100% { color: #ffffff; } }
 @keyframes flashRed { 0% { color: #f87171; } 100% { color: #ffffff; } }
 .up { animation: flashGreen 1s ease-out; }
@@ -53,14 +132,38 @@ button.active { background-color: #007bff; }
 
 /* Leaderboard */
 .leaderboard-container {
-    background-color: #2a2a2a; padding: 20px; border-radius: 8px; margin-bottom: 25px;
+    background-color: #2a2a2a; 
+    padding: 20px; 
+    border-radius: 8px; 
+    margin-bottom: 25px;
 }
-.leaderboard-container h2 { font-size: 18px; margin-bottom: 15px; color: #ffd700; }
-#leaderboard-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+
+.leaderboard-container h2 { 
+    font-size: 18px; 
+    margin-bottom: 15px; 
+    color: #ffd700; 
+}
+
+#leaderboard-list { 
+    list-style: none; 
+    display: flex; 
+    flex-direction: column; 
+    gap: 10px; 
+}
+
 #leaderboard-list li {
-    display: flex; justify-content: space-between; background-color: #1e1e1e;
-    padding: 12px 15px; border-radius: 6px; font-size: 16px; font-weight: bold;
+    display: flex; 
+    justify-content: space-between; 
+    background-color: #1e1e1e;
+    padding: 12px 15px; 
+    border-radius: 6px; 
+    font-size: 16px; 
+    font-weight: bold;
 }
 
 /* Chart */
-.chart-container { position: relative; height: 500px; width: 100%; }
+.chart-container { 
+    position: relative; 
+    height: 500px; 
+    width: 100%; 
+}
