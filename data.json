@@ -1,16 +1,5 @@
 [
   {
-    "timestamp": "2026-06-20T23:59:25.744718+00:00",
-    "viewers": {
-      "s0LLVQeMmtU": 725,
-      "1wECsnGZcfc": 835,
-      "nObUcHKZEGY": 286,
-      "3miKzKlmA-4": 835,
-      "281kTVNp8Wc": 0,
-      "AT0fo8Ty4jo": 835
-    }
-  },
-  {
     "timestamp": "2026-06-21T05:13:29.505906+00:00",
     "viewers": {
       "s0LLVQeMmtU": 7055,
@@ -15837,6 +15826,17 @@
       "3miKzKlmA-4": 273,
       "281kTVNp8Wc": 0,
       "AT0fo8Ty4jo": 0
+    }
+  },
+  {
+    "timestamp": "2026-10-02T06:07:28.229861+00:00",
+    "viewers": {
+      "s0LLVQeMmtU": 7030,
+      "1wECsnGZcfc": 6481,
+      "nObUcHKZEGY": 12228,
+      "3miKzKlmA-4": 0,
+      "281kTVNp8Wc": 0,
+      "AT0fo8Ty4jo": 232
     }
   }
 ]
